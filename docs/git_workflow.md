@@ -34,11 +34,19 @@ We follow a simple Git workflow based on feature branches. This ensures that the
     git push origin feature/your-feature-name
     ```
 
-4.  **Create a pull request:**
+4.  **Clean up commit history (Optional but Recommended):**
+    Before creating a pull request, consider cleaning up your commit history. This can involve:
+    - **Squashing commits:** Combine multiple small, related commits into a single, more meaningful commit.
+    - **Rebasing:** Reapply your commits on top of the latest `main` branch to create a linear history.
+    This helps keep the `main` branch history clean and easy to follow.
+
+    **Caution with Force Push:** If you rewrite history (e.g., by rebasing or squashing commits) on a branch that has already been pushed to the remote, you will need to use `git push --force` or `git push --force-with-lease`. **Be extremely cautious when using `git push --force`**, as it can overwrite history on the remote and cause issues for other collaborators who have pulled your previous changes. Always prefer `git push --force-with-lease` as it's a safer alternative.
+
+5.  **Create a pull request:**
     Open a pull request (PR) from your feature branch to the `main` branch. Provide a clear description of the changes you have made in the PR description. If your PR addresses an issue, link the issue in the description.
 
-5.  **Code Review:**
+6.  **Code Review:**
     At least one other team member must review and approve the PR before it can be merged.
 
-6.  **Merge:**
+7.  **Merge:**
     Once the PR is approved, it can be merged into the `main` branch.

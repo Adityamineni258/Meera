@@ -21,7 +21,10 @@ To add a new feature to the app, follow the steps below. This will ensure that t
 
     If the new feature is accessed from another screen, add the navigation logic to the appropriate widget.
 
-5.  **Follow the architecture:**
+5.  **Write Tests:**
+    For every new feature, it's crucial to write unit and/or widget tests to ensure its correctness and prevent regressions. Place your tests in the `test/` directory, mirroring the structure of your `lib/` directory. For example, tests for `lib/features/settings/view/settings_screen.dart` would go into `test/features/settings/view/settings_screen_test.dart`.
+
+6.  **Follow the architecture:**
     - **Separation of Concerns:** Keep the UI code in the `view/` directory and the business logic in the `controller/` or `bloc/` directory.
     - **Modularity:** The feature should be as self-contained as possible. Avoid creating tight dependencies between features.
     - **Reusability:** If you create a widget that can be used in other features, consider moving it to the `lib/widgets/` directory.

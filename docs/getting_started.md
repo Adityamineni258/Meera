@@ -8,8 +8,9 @@ To get started with the project, follow these steps:
 
 2.  **Clone the repository:**
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/Adityamineni258/Meera.git
     ```
+    *Note: If this is a private repository, ensure you have the necessary GitHub authentication set up (e.g., SSH keys or a Personal Access Token).*
 
 3.  **Navigate to the project directory:**
     ```bash
@@ -21,7 +22,11 @@ To get started with the project, follow these steps:
     flutter pub get
     ```
 
-5.  **Run the app:**
+5.  **Open the project in your IDE:**
+    - **VS Code:** Open the `meera` folder.
+    - **Android Studio:** Open the `meera` folder as a Flutter project.
+
+6.  **Run the app:**
     ```bash
     flutter run
     ```

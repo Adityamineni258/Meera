@@ -1,6 +1,6 @@
 # Main Concepts
 
-This document explains the main concepts of the Menta app in simple terms.
+This document explains the main concepts of the Meera app in simple terms.
 
 ## 1. The Shell
 
@@ -19,4 +19,4 @@ In Flutter, everything is a "Widget". A widget can be a button, a text, an icon,
 
 ## 4. State Management
 
-"State" is the data that can change over time. For example, the currently selected language is a state. We use `StatefulWidget` to manage the state of our widgets. When the state changes, the UI is updated automatically.
+"State" is the data that can change over time. For example, the currently selected language is a state. We primarily use Flutter's built-in `StatefulWidget` to manage the state of our widgets. When the state changes, the UI is updated automatically. For more complex state management scenarios, Flutter offers various solutions (e.g., Provider, BLoC, Riverpod), which can be integrated as the project grows.

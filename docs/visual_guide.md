@@ -1,6 +1,6 @@
 # Visual Guide
 
-This guide provides a visual representation of the app's UI to help you understand the different components.
+This guide provides a visual representation of the app's UI to help you understand the different components of the Meera app.
 
 ## Home Screen
 
@@ -22,7 +22,7 @@ The Home Screen is the main screen of the app. It is composed of three main part
 +-------------------------------------------------+
 | [Bottom Navigation Bar]                         |
 |                                                 |
-|   [Icon]      [Icon]      [Icon]                |
+|   [Tools]     [Home]      [Journal]             |
 +-------------------------------------------------+
 ```
 

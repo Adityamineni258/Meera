@@ -1,6 +1,6 @@
 # Project Structure
 
-The project follows a modular and scalable architecture to facilitate team collaboration and maintainability. The `lib` directory is organized as follows:
+The project follows a feature-first, modular, and scalable architecture to facilitate team collaboration and maintainability. The `lib` directory is organized as follows:
 
 - **`main.dart`**: The entry point of the application. It contains the `main()` function and the root `MyApp` widget.
 
@@ -19,11 +19,11 @@ The project follows a modular and scalable architecture to facilitate team colla
     - **`view/`**: Contains the screen for this feature.
       - **`tools_screen.dart`**: The UI for the "Tools" screen.
   - **`home_content/`**: The content for the home screen.
-    - **`view/`**:
+    - **`view/`**: Contains the screen for this feature.
       - **`main_content_screen.dart`**: The UI for the main content of the home screen.
   - **`journal/`**: The "Journal" feature.
-    - **`view/`**:
+    - **`view/`**: Contains the screen for this feature.
       - **`journal_screen.dart`**: The UI for the "Journal" screen.
   - **`language/`**: The language selection feature.
-    - **`view/`**:
+    - **`view/`**: Contains the screen for this feature.
       - **`language_selection_screen.dart`**: The UI for the language selection screen.
