@@ -26,7 +26,7 @@ class CustomBottomNavBar extends StatelessWidget {
         (pageOffset * iconSlotWidth) + (iconSlotWidth / 2) - 35;
 
     return Container(
-      color: AppTheme.cardColor,
+      color: Colors.transparent,
       padding: const EdgeInsets.all(20.0),
       child: GestureDetector(
         onHorizontalDragUpdate: (details) {

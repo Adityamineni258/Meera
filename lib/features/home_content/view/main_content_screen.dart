@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:meera/constants/app_theme.dart';
+import '../../../l10n/app_localizations.dart';
 
 class MainContentScreen extends StatefulWidget {
   const MainContentScreen({super.key});
@@ -52,14 +53,28 @@ class _MainContentScreenState extends State<MainContentScreen>
               ),
             ),
             const Spacer(flex: 3),
-            Text(
-              'Hi, How are you?',
-              style: GoogleFonts.lexend(
-                fontSize: 24,
-                fontWeight: FontWeight.w500,
-                color: AppTheme.textColor,
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+              decoration: BoxDecoration(
+                color: AppTheme.cardColor,
+                borderRadius: BorderRadius.circular(24),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withAlpha(10),
+                    spreadRadius: 2,
+                    blurRadius: 10,
+                  ),
+                ],
               ),
-              textAlign: TextAlign.center,
+              child: Text(
+                AppLocalizations.of(context)!.helloMessage,
+                style: GoogleFonts.lexend(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w500,
+                  color: AppTheme.textColor,
+                ),
+                textAlign: TextAlign.center,
+              ),
             ),
             const Spacer(flex: 2),
           ],

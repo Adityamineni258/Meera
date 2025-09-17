@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:meera/constants/app_theme.dart';
+import '../../../l10n/app_localizations.dart';
 
 class LanguageSelectionScreen extends StatefulWidget {
   const LanguageSelectionScreen({super.key});
@@ -11,18 +12,18 @@ class LanguageSelectionScreen extends StatefulWidget {
 }
 
 class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
-  String _selectedLanguage = 'English';
+  String _selectedLanguage = 'en';
 
-  final List<String> _languages = [
-    'Bengali (বাংলা)',
-    'English',
-    'Hindi (हिंदी)',
-    'Kannada (ಕನ್ನಡ)',
-    'Malayalam (മലയാളം)',
-    'Marathi (मराठी)',
-    'Tamil (தமிழ்)',
-    'Telugu (తెలుగు)',
-  ];
+  final Map<String, String> _languages = {
+    'bn': 'Bengali (বাংলা)',
+    'en': 'English',
+    'hi': 'Hindi (हिंदी)',
+    'kn': 'Kannada (ಕನ್ನಡ)',
+    'ml': 'Malayalam (മലയാളം)',
+    'mr': 'Marathi (मराठी)',
+    'ta': 'Tamil (தமிழ்)',
+    'te': 'Telugu (తెలుగు)',
+  };
 
   @override
   Widget build(BuildContext context) {
@@ -32,8 +33,9 @@ class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
         padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
         itemCount: _languages.length,
         itemBuilder: (context, index) {
-          final language = _languages[index];
-          final isSelected = _selectedLanguage == language;
+          final languageCode = _languages.keys.elementAt(index);
+          final languageName = _languages.values.elementAt(index);
+          final isSelected = _selectedLanguage == languageCode;
 
           return AnimatedContainer(
             duration: const Duration(milliseconds: 300),
@@ -57,7 +59,7 @@ class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
             ),
             child: ListTile(
               title: Text(
-                language,
+                languageName,
                 style: GoogleFonts.lexend(
                   fontSize: 20,
                   fontWeight:
@@ -73,7 +75,10 @@ class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
                   : null,
               onTap: () {
                 setState(() {
-                  _selectedLanguage = language;
+                  _selectedLanguage = languageCode;
+                  // This is where you would typically change the app's locale.
+                  // For example, using a state management solution like Provider or Riverpod.
+                  // For now, we'll just update the selected language visually.
                 });
               },
             ),
