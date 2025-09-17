@@ -9,5 +9,5 @@ class AppLocalizationsTe extends AppLocalizations {
   AppLocalizationsTe([String locale = 'te']) : super(locale);
 
   @override
-  String get helloMessage => 'ఏంటి?';
+  String get helloMessage => 'మీరు ఎలా ఉన్నారు?';
 }

@@ -9,5 +9,5 @@ class AppLocalizationsMr extends AppLocalizations {
   AppLocalizationsMr([String locale = 'mr']) : super(locale);
 
   @override
-  String get helloMessage => 'काय बंताई, कसा काय?';
+  String get helloMessage => 'तुम्ही कसे आहात?';
 }

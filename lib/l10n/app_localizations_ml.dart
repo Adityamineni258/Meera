@@ -9,5 +9,5 @@ class AppLocalizationsMl extends AppLocalizations {
   AppLocalizationsMl([String locale = 'ml']) : super(locale);
 
   @override
-  String get helloMessage => 'എന്തുണ്ട്?';
+  String get helloMessage => 'സുഖമാണോ?';
 }

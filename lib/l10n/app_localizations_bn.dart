@@ -9,5 +9,5 @@ class AppLocalizationsBn extends AppLocalizations {
   AppLocalizationsBn([String locale = 'bn']) : super(locale);
 
   @override
-  String get helloMessage => 'কী খবর?';
+  String get helloMessage => 'তুমি কেমন আছো?';
 }

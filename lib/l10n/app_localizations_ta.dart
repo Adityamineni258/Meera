@@ -9,5 +9,5 @@ class AppLocalizationsTa extends AppLocalizations {
   AppLocalizationsTa([String locale = 'ta']) : super(locale);
 
   @override
-  String get helloMessage => 'என்ன மச்சி?';
+  String get helloMessage => 'நீங்கள் எப்படி இருக்கிறீர்கள்?';
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:meera/constants/app_theme.dart';
 import '../../../l10n/app_localizations.dart';
+import '../../../locale_provider.dart';
 
 class LanguageSelectionScreen extends StatefulWidget {
   const LanguageSelectionScreen({super.key});
@@ -24,6 +25,12 @@ class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
     'ta': 'Tamil (தமிழ்)',
     'te': 'Telugu (తెలుగు)',
   };
+
+  @override
+  void initState() {
+    super.initState();
+    _selectedLanguage = LocaleProvider.instance.value.languageCode;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -76,9 +83,7 @@ class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
               onTap: () {
                 setState(() {
                   _selectedLanguage = languageCode;
-                  // This is where you would typically change the app's locale.
-                  // For example, using a state management solution like Provider or Riverpod.
-                  // For now, we'll just update the selected language visually.
+                  LocaleProvider.instance.setLocale(languageCode);
                 });
               },
             ),

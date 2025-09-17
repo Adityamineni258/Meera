@@ -9,5 +9,5 @@ class AppLocalizationsKn extends AppLocalizations {
   AppLocalizationsKn([String locale = 'kn']) : super(locale);
 
   @override
-  String get helloMessage => 'ಹೇ ಮಗಾ!';
+  String get helloMessage => 'ನೀವು ಚೆನ್ನಾಗಿದ್ದೀರಾ?';
 }
