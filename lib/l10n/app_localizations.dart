@@ -121,6 +121,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Mindfulness'**
   String get toolMindfulness;
+
+  /// No description provided for @toolLanguages.
+  ///
+  /// In en, this message translates to:
+  /// **'Languages'**
+  String get toolLanguages;
+
+  /// No description provided for @journalTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Journal'**
+  String get journalTitle;
+
+  /// No description provided for @journalErrorMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Error: {error}'**
+  String journalErrorMessage(Object error);
+
+  /// No description provided for @journalNoEntriesMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'No journal entries yet.'**
+  String get journalNoEntriesMessage;
+
+  /// No description provided for @journalListeningHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Listening...'**
+  String get journalListeningHint;
+
+  /// No description provided for @journalWriteHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Write or speak your thoughts...'**
+  String get journalWriteHint;
 }
 
 class _AppLocalizationsDelegate

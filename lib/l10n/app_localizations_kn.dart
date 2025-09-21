@@ -12,5 +12,25 @@ class AppLocalizationsKn extends AppLocalizations {
   String get helloMessage => 'ನೀವು ಚೆನ್ನಾಗಿದ್ದೀರಾ?';
 
   @override
-  String get toolMindfulness => 'Mindfulness';
+  String get toolMindfulness => 'ಸಾವಧಾನತೆ';
+
+  @override
+  String get toolLanguages => 'ಭಾಷೆಗಳು';
+
+  @override
+  String get journalTitle => 'Journal';
+
+  @override
+  String journalErrorMessage(Object error) {
+    return 'Error: $error';
+  }
+
+  @override
+  String get journalNoEntriesMessage => 'No journal entries yet.';
+
+  @override
+  String get journalListeningHint => 'Listening...';
+
+  @override
+  String get journalWriteHint => 'Write or speak your thoughts...';
 }

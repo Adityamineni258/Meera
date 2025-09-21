@@ -1,4 +1,11 @@
 {
   "helloMessage": "Hi, How are you?",
-  "toolMindfulness": "Mindfulness"
+  "toolMindfulness": "Mindfulness",
+  "toolLanguages": "Languages",
+  "journalTitle": "Journal",
+  "journalErrorMessage": "Error: {error}",
+  "journalNoEntriesMessage": "No journal entries yet.",
+  "journalListeningHint": "Listening...",
+  "journalWriteHint": "Write or speak your thoughts..."
+
 }

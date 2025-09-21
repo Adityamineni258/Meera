@@ -181,7 +181,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                           title: Padding(
                             padding: const EdgeInsets.only(top: 16.0),
                             child: Text(
-                              'Languages',
+                              AppLocalizations.of(context).toolLanguages,
                               style: GoogleFonts.lexend(
                                 fontSize: 26,
                                 fontWeight: FontWeight.w500,

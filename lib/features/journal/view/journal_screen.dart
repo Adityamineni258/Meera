@@ -93,7 +93,7 @@ class JournalScreenState extends State<JournalScreen> {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Text(
-                'Journal',
+                AppLocalizations.of(context).journalTitle,
                 style: GoogleFonts.lexend(
                   fontSize: 26,
                   fontWeight: FontWeight.w500,
@@ -108,9 +108,9 @@ class JournalScreenState extends State<JournalScreen> {
                   if (snapshot.connectionState == ConnectionState.waiting) {
                     return const Center(child: CircularProgressIndicator());
                   } else if (snapshot.hasError) {
-                    return Center(child: Text('Error: ${snapshot.error}'));
+                    return Center(child: Text(AppLocalizations.of(context).journalErrorMessage(snapshot.error.toString())));
                   } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-                    return const Center(child: Text('No journal entries yet.'));
+                    return Center(child: Text(AppLocalizations.of(context).journalNoEntriesMessage));
                   } else {
                     final entries = snapshot.data!;
                     return ListView.builder(
@@ -137,8 +137,8 @@ class JournalScreenState extends State<JournalScreen> {
                       controller: _journalTextController,
                       decoration: InputDecoration(
                         hintText: _speechToText.isListening
-                            ? 'Listening...'
-                            : 'Write or speak your thoughts...',
+                            ? AppLocalizations.of(context).journalListeningHint
+                            : AppLocalizations.of(context).journalWriteHint,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(25.0),
                           borderSide: BorderSide.none,

@@ -1,29 +1,57 @@
 {
   "bn": [
-    "toolMindfulness"
+    "journalTitle",
+    "journalErrorMessage",
+    "journalNoEntriesMessage",
+    "journalListeningHint",
+    "journalWriteHint"
   ],
 
   "hi": [
-    "toolMindfulness"
+    "journalTitle",
+    "journalErrorMessage",
+    "journalNoEntriesMessage",
+    "journalListeningHint",
+    "journalWriteHint"
   ],
 
   "kn": [
-    "toolMindfulness"
+    "journalTitle",
+    "journalErrorMessage",
+    "journalNoEntriesMessage",
+    "journalListeningHint",
+    "journalWriteHint"
   ],
 
   "ml": [
-    "toolMindfulness"
+    "journalTitle",
+    "journalErrorMessage",
+    "journalNoEntriesMessage",
+    "journalListeningHint",
+    "journalWriteHint"
   ],
 
   "mr": [
-    "toolMindfulness"
+    "journalTitle",
+    "journalErrorMessage",
+    "journalNoEntriesMessage",
+    "journalListeningHint",
+    "journalWriteHint"
   ],
 
   "ta": [
-    "toolMindfulness"
+    "journalTitle",
+    "journalErrorMessage",
+    "journalNoEntriesMessage",
+    "journalListeningHint",
+    "journalWriteHint"
   ],
 
   "te": [
-    "toolMindfulness"
+    "journalTitle",
+    "journalErrorMessage",
+    "journalNoEntriesMessage",
+    "journalListeningHint",
+    "journalWriteHint"
   ]
 }

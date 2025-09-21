@@ -12,5 +12,25 @@ class AppLocalizationsTa extends AppLocalizations {
   String get helloMessage => 'நீங்கள் எப்படி இருக்கிறீர்கள்?';
 
   @override
-  String get toolMindfulness => 'Mindfulness';
+  String get toolMindfulness => 'மனந்தெளிநிலை';
+
+  @override
+  String get toolLanguages => 'மொழிகள்';
+
+  @override
+  String get journalTitle => 'Journal';
+
+  @override
+  String journalErrorMessage(Object error) {
+    return 'Error: $error';
+  }
+
+  @override
+  String get journalNoEntriesMessage => 'No journal entries yet.';
+
+  @override
+  String get journalListeningHint => 'Listening...';
+
+  @override
+  String get journalWriteHint => 'Write or speak your thoughts...';
 }

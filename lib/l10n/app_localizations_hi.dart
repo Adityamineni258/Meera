@@ -12,5 +12,25 @@ class AppLocalizationsHi extends AppLocalizations {
   String get helloMessage => 'नमस्ते आप कैसे हैं?';
 
   @override
-  String get toolMindfulness => 'Mindfulness';
+  String get toolMindfulness => 'सचेतन';
+
+  @override
+  String get toolLanguages => 'भाषाएँ';
+
+  @override
+  String get journalTitle => 'Journal';
+
+  @override
+  String journalErrorMessage(Object error) {
+    return 'Error: $error';
+  }
+
+  @override
+  String get journalNoEntriesMessage => 'No journal entries yet.';
+
+  @override
+  String get journalListeningHint => 'Listening...';
+
+  @override
+  String get journalWriteHint => 'Write or speak your thoughts...';
 }

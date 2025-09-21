@@ -1,3 +1,7 @@
 {
-    "helloMessage": "তুমি কেমন আছো?"
+    "helloMessage": "তুমি কেমন আছো?",
+  "toolMindfulness": "মননশীলতা",
+  "toolLanguages": "ভাষাসমূহ",
+  "journalTitle": "দিনলিপি",
+  "journalErrorMessage": "ভুল: {error}"
 }
