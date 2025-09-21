@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:meera/constants/app_theme.dart';
-import '../../../l10n/app_localizations.dart';
 import '../../../locale_provider.dart';
 
 class LanguageSelectionScreen extends StatefulWidget {
@@ -57,7 +56,7 @@ class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
               boxShadow: isSelected
                   ? [
                       BoxShadow(
-                        color: AppTheme.primaryColor.withOpacity(0.2),
+                        color: AppTheme.primaryColor.withAlpha((255 * 0.2).round()),
                         spreadRadius: 2,
                         blurRadius: 8,
                       ),

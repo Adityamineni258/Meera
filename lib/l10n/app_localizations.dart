@@ -115,6 +115,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Hi, How are you?'**
   String get helloMessage;
+
+  /// No description provided for @toolMindfulness.
+  ///
+  /// In en, this message translates to:
+  /// **'Mindfulness'**
+  String get toolMindfulness;
 }
 
 class _AppLocalizationsDelegate

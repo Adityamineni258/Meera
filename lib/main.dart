@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:meera/constants/app_theme.dart';
-import 'package:meera/widgets/phone_frame.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'l10n/app_localizations.dart';
 import 'package:meera/locale_provider.dart';
+import 'package:meera/features/mood_tracking/mood_screen.dart'; // Added MoodScreen import
+// import 'package:firebase_core/firebase_core.dart';
+// import 'package:meera/firebase_options.dart'; // You might need to generate this file later
 
-void main() {
+void main() async {
+  // WidgetsFlutterBinding.ensureInitialized();
+  // await Firebase.initializeApp(
+  // //   options: DefaultFirebaseOptions.currentPlatform,
+  // );
   runApp(const MyApp());
 }
 
@@ -37,7 +43,7 @@ class MyApp extends StatelessWidget {
             Locale('ta', ''),
             Locale('te', ''),
           ],
-          home: const PhoneFrame(),
+          home: const MoodScreen(),
         );
       },
     );

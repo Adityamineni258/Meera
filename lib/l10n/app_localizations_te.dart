@@ -10,4 +10,7 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get helloMessage => 'మీరు ఎలా ఉన్నారు?';
+
+  @override
+  String get toolMindfulness => 'Mindfulness';
 }

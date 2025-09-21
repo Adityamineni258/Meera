@@ -6,6 +6,8 @@ import 'package:meera/features/journal/view/journal_screen.dart';
 import 'package:meera/features/language/view/language_selection_screen.dart';
 import 'package:meera/features/shell/widgets/custom_bottom_nav_bar.dart';
 import 'package:meera/features/tools/view/tools_screen.dart';
+import 'package:meera/features/ai_chat/chat_screen.dart';
+import 'package:meera/features/mood_tracking/mood_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -15,7 +17,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
-  int _selectedIndex = 1;
+  int _selectedIndex = 2; // Changed initial index to 2 for Home
   late PageController _pageController;
   bool _isLanguageSelectionVisible = false;
   late AnimationController _fadeController;
@@ -94,12 +96,17 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     }
     switch (index) {
       case 0:
-        return ToolsScreen(onToolSelected: _selectTool);
+        return const MoodScreen(); // MoodScreen at index 0
       case 1:
-        return const MainContentScreen();
+        return ToolsScreen(onToolSelected: _selectTool); // ToolsScreen at index 1
       case 2:
+        return const MainContentScreen(); // Home at index 2
+      case 3:
+        return const JournalScreen(); // Journal at index 3
+      case 4:
+        return const ChatScreen(); // AI Chat at index 4
       default:
-        return const JournalScreen();
+        return const MainContentScreen(); // Fallback to Home
     }
   }
 
@@ -108,115 +115,128 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     final bool isToolSelected = _selectedToolBody != null;
 
     return Scaffold(
-      appBar: isToolSelected
-          ? AppBar(
-              leading: Padding(
-                padding: const EdgeInsets.only(left: 8.0, top: 16.0),
-                child: GestureDetector(
-                  onTap: _goBackFromTool,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      shape: BoxShape.circle,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withAlpha(15),
-                          spreadRadius: 1,
-                          blurRadius: 8,
-                        ),
-                      ],
-                    ),
-                    child: const Icon(Icons.arrow_back_ios_new, size: 20),
-                  ),
-                ),
-              ),
-              title: Padding(
-                padding: const EdgeInsets.only(top: 16.0),
-                child: Text(
-                  _selectedToolTitle ?? '',
-                  style: GoogleFonts.lexend(
-                    fontSize: 26,
-                    fontWeight: FontWeight.w500,
-                    color: AppTheme.textColor,
-                  ),
-                ),
-              ),
-            )
-          : _isLanguageSelectionVisible
-              ? AppBar(
-                  leading: Padding(
-                    padding: const EdgeInsets.only(left: 8.0, top: 16.0),
-                    child: GestureDetector(
-                      onTap: _toggleLanguageScreen,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          shape: BoxShape.circle,
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withAlpha(15),
-                              spreadRadius: 1,
-                              blurRadius: 8,
+      backgroundColor: AppTheme.primaryColor, // Added from PhoneFrame
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(12.0), // Added from PhoneFrame
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(40), // Added from PhoneFrame
+            child: Scaffold(
+              appBar: isToolSelected
+                  ? AppBar(
+                      leading: Padding(
+                        padding: const EdgeInsets.only(left: 8.0, top: 16.0),
+                        child: GestureDetector(
+                          onTap: _goBackFromTool,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              shape: BoxShape.circle,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withAlpha(15),
+                                  spreadRadius: 1,
+                                  blurRadius: 8,
+                                ),
+                              ],
                             ),
+                            child: const Icon(Icons.arrow_back_ios_new, size: 20),
+                          ),
+                        ),
+                      ),
+                      title: Padding(
+                        padding: const EdgeInsets.only(top: 16.0),
+                        child: Text(
+                          _selectedToolTitle ?? '',
+                          style: GoogleFonts.lexend(
+                            fontSize: 26,
+                            fontWeight: FontWeight.w500,
+                            color: AppTheme.textColor,
+                          ),
+                        ),
+                      ),
+                    )
+                  : _isLanguageSelectionVisible
+                      ? AppBar(
+                          leading: Padding(
+                            padding: const EdgeInsets.only(left: 8.0, top: 16.0),
+                            child: GestureDetector(
+                              onTap: _toggleLanguageScreen,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  shape: BoxShape.circle,
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black.withAlpha(15),
+                                      spreadRadius: 1,
+                                      blurRadius: 8,
+                                    ),
+                                  ],
+                                ),
+                                child: const Icon(Icons.arrow_back_ios_new, size: 20),
+                              ),
+                            ),
+                          ),
+                          title: Padding(
+                            padding: const EdgeInsets.only(top: 16.0),
+                            child: Text(
+                              'Languages',
+                              style: GoogleFonts.lexend(
+                                fontSize: 26,
+                                fontWeight: FontWeight.w500,
+                                color: AppTheme.textColor,
+                              ),
+                            ),
+                          ),
+                        )
+                      : AppBar(
+                          automaticallyImplyLeading: false,
+                          actions: [
+                            IconButton(
+                              icon: const Icon(Icons.language),
+                              iconSize: 30.0,
+                              onPressed: _toggleLanguageScreen,
+                            ),
+                            const SizedBox(width: 12),
                           ],
                         ),
-                        child: const Icon(Icons.arrow_back_ios_new, size: 20),
-                      ),
-                    ),
+              bottomNavigationBar: CustomBottomNavBar(
+                pageController: _pageController,
+                selectedIndex: _selectedIndex,
+                onNavItemTapped: _onNavItemTapped,
+              ),
+              body: Stack(
+                children: [
+                  PageView(
+                    controller: _pageController,
+                    physics: const ClampingScrollPhysics(),
+                    onPageChanged: (index) {
+                      if (_isLanguageSelectionVisible) {
+                        _toggleLanguageScreen();
+                      }
+                      setState(() {
+                        _selectedIndex = index;
+                      });
+                    },
+                    children: [
+                      _buildPageForIndex(0),
+                      _buildPageForIndex(1),
+                      _buildPageForIndex(2),
+                      _buildPageForIndex(3),
+                      _buildPageForIndex(4),
+                    ],
                   ),
-                  title: Padding(
-                    padding: const EdgeInsets.only(top: 16.0),
-                    child: Text(
-                      'Languages',
-                      style: GoogleFonts.lexend(
-                        fontSize: 26,
-                        fontWeight: FontWeight.w500,
-                        color: AppTheme.textColor,
-                      ),
+                  if (isToolSelected)
+                    Container(
+                      color: AppTheme.scaffoldBackgroundColor,
+                      child: _selectedToolBody,
                     ),
-                  ),
-                )
-              : AppBar(
-                  automaticallyImplyLeading: false,
-                  actions: [
-                    IconButton(
-                      icon: const Icon(Icons.language),
-                      iconSize: 30.0,
-                      onPressed: _toggleLanguageScreen,
-                    ),
-                    const SizedBox(width: 12),
-                  ],
-                ),
-      bottomNavigationBar: CustomBottomNavBar(
-        pageController: _pageController,
-        selectedIndex: _selectedIndex,
-        onNavItemTapped: _onNavItemTapped,
-      ),
-      body: Stack(
-        children: [
-          PageView(
-            controller: _pageController,
-            physics: const ClampingScrollPhysics(),
-            onPageChanged: (index) {
-              if (_isLanguageSelectionVisible) {
-                _toggleLanguageScreen();
-              }
-              setState(() {
-                _selectedIndex = index;
-              });
-            },
-            children: [
-              _buildPageForIndex(0),
-              _buildPageForIndex(1),
-              _buildPageForIndex(2),
-            ],
-          ),
-          if (isToolSelected)
-            Container(
-              color: AppTheme.scaffoldBackgroundColor,
-              child: _selectedToolBody,
+                ],
+              ),
             ),
-        ],
+          ),
+        ),
       ),
     );
   }

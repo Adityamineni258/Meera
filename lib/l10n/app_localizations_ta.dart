@@ -10,4 +10,7 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get helloMessage => 'நீங்கள் எப்படி இருக்கிறீர்கள்?';
+
+  @override
+  String get toolMindfulness => 'Mindfulness';
 }

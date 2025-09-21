@@ -1,1 +1,29 @@
-{}
+{
+  "bn": [
+    "toolMindfulness"
+  ],
+
+  "hi": [
+    "toolMindfulness"
+  ],
+
+  "kn": [
+    "toolMindfulness"
+  ],
+
+  "ml": [
+    "toolMindfulness"
+  ],
+
+  "mr": [
+    "toolMindfulness"
+  ],
+
+  "ta": [
+    "toolMindfulness"
+  ],
+
+  "te": [
+    "toolMindfulness"
+  ]
+}

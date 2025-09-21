@@ -18,10 +18,10 @@ class CustomBottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final navBarWidth = screenWidth - (2 * 12) - (2 * 20);
-    final iconSlotWidth = navBarWidth / 3;
+    final iconSlotWidth = navBarWidth / 5; // Changed from 4 to 5
 
     final pageOffset =
-        pageController.hasClients ? pageController.page ?? 1.0 : 1.0;
+        pageController.hasClients ? pageController.page ?? 0.0 : 0.0;
     final pillPosition =
         (pageOffset * iconSlotWidth) + (iconSlotWidth / 2) - 35;
 
@@ -50,7 +50,7 @@ class CustomBottomNavBar extends StatelessWidget {
             targetPage = pageController.page!.round();
           }
 
-          final int finalPage = targetPage.clamp(0, 2);
+          final int finalPage = targetPage.clamp(0, 4); // Changed from 3 to 4
           onNavItemTapped(finalPage);
         },
         child: Container(
@@ -77,16 +77,18 @@ class CustomBottomNavBar extends StatelessWidget {
                   width: 70,
                   height: 55,
                   decoration: BoxDecoration(
-                    color: AppTheme.accentColor.withOpacity(0.2),
+                    color: AppTheme.accentColor.withAlpha((255 * 0.2).round()),
                     borderRadius: BorderRadius.circular(16),
                   ),
                 ),
               ),
               Row(
                 children: [
-                  Expanded(child: _buildNavItem(0)),
-                  Expanded(child: _buildNavItem(1)),
-                  Expanded(child: _buildNavItem(2)),
+                  Expanded(child: _buildNavItem(0)), // MoodScreen
+                  Expanded(child: _buildNavItem(1)), // ToolsScreen
+                  Expanded(child: _buildNavItem(2)), // Home
+                  Expanded(child: _buildNavItem(3)), // Journal
+                  Expanded(child: _buildNavItem(4)), // AI Chat
                 ],
               ),
             ],
@@ -98,16 +100,28 @@ class CustomBottomNavBar extends StatelessWidget {
 
   Widget _buildNavItem(int index) {
     final isSelected =
-        (pageController.hasClients ? pageController.page?.round() : 1) ==
+        (pageController.hasClients ? pageController.page?.round() : 0) ==
             index;
     String assetName;
 
-    if (index == 0) {
-      assetName = 'assets/images/tools.svg';
-    } else if (index == 1) {
-      assetName = 'assets/images/home_button.svg';
-    } else {
-      assetName = 'assets/images/journal.svg';
+    switch (index) {
+      case 0:
+        assetName = 'assets/images/mood.svg'; // MoodScreen icon
+        break;
+      case 1:
+        assetName = 'assets/images/tools.svg'; // ToolsScreen icon
+        break;
+      case 2:
+        assetName = 'assets/images/home_button.svg'; // Home icon
+        break;
+      case 3:
+        assetName = 'assets/images/journal.svg'; // Journal icon
+        break;
+      case 4:
+        assetName = 'assets/images/ai_chat.svg'; // AI Chat icon
+        break;
+      default:
+        assetName = 'assets/images/home_button.svg'; // Fallback
     }
 
     return GestureDetector(

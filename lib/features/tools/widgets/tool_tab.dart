@@ -27,7 +27,7 @@ class ToolTab extends StatelessWidget {
           ),
           shadows: [
             BoxShadow(
-              color: AppTheme.primaryColor.withOpacity(0.2),
+              color: AppTheme.primaryColor.withAlpha((255 * 0.2).round()),
               spreadRadius: 2,
               blurRadius: 8,
             ),

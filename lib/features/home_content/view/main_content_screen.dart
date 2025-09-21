@@ -67,7 +67,7 @@ class _MainContentScreenState extends State<MainContentScreen>
                 ],
               ),
               child: Text(
-                AppLocalizations.of(context)!.helloMessage,
+                AppLocalizations.of(context).helloMessage,
                 style: GoogleFonts.lexend(
                   fontSize: 24,
                   fontWeight: FontWeight.w500,

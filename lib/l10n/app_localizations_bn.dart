@@ -10,4 +10,7 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get helloMessage => 'তুমি কেমন আছো?';
+
+  @override
+  String get toolMindfulness => 'Mindfulness';
 }

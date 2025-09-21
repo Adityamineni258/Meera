@@ -10,4 +10,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get helloMessage => 'Hi, How are you?';
+
+  @override
+  String get toolMindfulness => 'Mindfulness';
 }

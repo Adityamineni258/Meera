@@ -10,4 +10,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get helloMessage => 'नमस्ते आप कैसे हैं?';
+
+  @override
+  String get toolMindfulness => 'Mindfulness';
 }

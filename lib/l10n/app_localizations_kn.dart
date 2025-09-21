@@ -10,4 +10,7 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get helloMessage => 'ನೀವು ಚೆನ್ನಾಗಿದ್ದೀರಾ?';
+
+  @override
+  String get toolMindfulness => 'Mindfulness';
 }
